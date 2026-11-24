@@ -1,0 +1,27 @@
+Task: Place the red cube inside the green cup.
+
+Observe the tabletop and robot state using both available exterior cameras. This rig has no wrist camera.
+
+Your objective is to pick up the small red cube and place it completely inside the upright green cup.
+
+Success conditions:
+
+1. The red cube is inside the green cup.
+2. The cup remains upright and has not been knocked over.
+3. The gripper has released the cube and is completely outside the cup.
+4. The gripper is closed after withdrawing from the cup.
+
+Safety and execution requirements:
+
+- Use small, controlled movements.
+- Avoid contact with the cup rim, table, camera equipment, and any cables.
+- Keep the cup upright throughout the task.
+- Observe and verify the result after each meaningful movement.
+- Never assume that a grasp or placement succeeded without checking the observations.
+- If the scene is uncertain, an obstacle blocks the path, or safe execution cannot be established, stop and request human assistance.
+- Do not attempt unrelated tasks.
+
+Stop after the single task is completed and report whether all success conditions are satisfied.
+
+If the gripper or required clearance cannot be verified from these views,
+stop and explain exactly what needs to be made visible.

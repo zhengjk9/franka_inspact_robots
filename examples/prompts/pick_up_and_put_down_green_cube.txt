@@ -1,0 +1,41 @@
+Task: Pick up the green cube and put it back down.
+
+Start from the current robot pose. Use all available camera images, depth observations, and robot state.
+
+1. Locate the small green cube and approach it with the gripper open.
+2. Align the fingers around the cube and close the gripper gently.
+3. Lift the cube just clear of the table, approximately 2-3 cm, and verify that it is held.
+4. Lower it gently back onto the table at its original location.
+5. Open the gripper to release the cube, then withdraw slightly without disturbing it.
+
+Use small, controlled movements and check observations after each meaningful movement. Avoid collisions with nearby objects, the table, and equipment. If alignment or clearance cannot be verified, stop and request human assistance.
+
+Success: the cube was visibly lifted, then placed stably back on the table and released; the gripper is clear of it.
+
+Perform this sequence once, then stop and report the result.
+
+Grasp failure and recovery:
+
+- Before lifting, verify that the cube is securely held using the
+  camera observations and measured gripper state. A nearly closed
+  gripper alone is not evidence of a successful grasp.
+
+- If the grasp is empty or uncertain, do not lift. Reopen the gripper
+  and verify that it has opened. Retreat only along a path whose
+  clearance can be confirmed.
+
+- Re-observe the cube and both fingers. Identify a specific alignment
+  error before retrying. Make a small correction supported by the
+  current observations; do not repeat the same failed approach or
+  guess joint directions from a previous posture.
+
+- Allow at most two additional grasp attempts. After each attempt,
+  verify the result before continuing.
+
+- Stop earlier if finger alignment, obstacle clearance, or gripper
+  response cannot be established. Do not retry solely to exhaust
+  the attempt budget.
+
+- If no secure grasp is achieved, leave the cube supported on the
+  table, release it if necessary, withdraw if safe, and report the
+  failure and the assistance required.
